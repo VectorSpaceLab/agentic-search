@@ -2,6 +2,12 @@
 <h1> ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval </h1>
 </div>
 
+<p align="center">
+  <a href="https://arxiv.org/abs/2510.08252" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/arXiv-2510.08252-B31B1B.svg?style=flat-square&logo=arxiv&logoColor=white" alt="arXiv:2510.08252">
+  </a>
+</p>
+
 
 ## Introduction
 
