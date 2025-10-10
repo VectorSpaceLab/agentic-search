@@ -20,7 +20,9 @@ TBA
 
 ### Evaluation Code and Scripts
 
-Refer to the evaluation [code](https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/evaluation/bright) and [script](https://github.com/FlagOpen/FlagEmbedding/blob/master/examples/evaluation/bright/eval_bright_short.sh) provided by [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding).
+For evaluation on the BRIGHT benchmark, refer to the [code](https://github.com/FlagOpen/FlagEmbedding/tree/master/FlagEmbedding/evaluation/bright) and [script](https://github.com/FlagOpen/FlagEmbedding/blob/master/examples/evaluation/bright/eval_bright_short.sh) provided by [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding).
+
+For evaluation on the R2MED benchmark, refer to the provided [code](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed/evaluation_r2med/code) and [script](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed/evaluation_r2med/scripts) (implemented using [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding) framework).
 
 ### Data and Synthesis Code
 
