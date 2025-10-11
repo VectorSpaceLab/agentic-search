@@ -72,6 +72,26 @@ Results:
 
 ![bge-reasoner-0928-results](./imgs/bge-reasoner-0928-results.png)
 
+Note:
+- "**Avg - ALL**" refers to the average performance across **all 12 datasets** in the BRIGHT benchmark.
+- "**Avg - SE**" refers to the average performance across the **7 datasets in the StackExchange subset** of the BRIGHT benchmark.
+- "**Avg - CD**" refers to the average performance across the **2 datasets in the Coding subset** of the BRIGHT benchmark.
+- "**Avg - MT**" refers to the average performance across the **3 datasets in the Theorem-based subset** of the BRIGHT benchmark.
+
+> Sources of results:
+>
+> [1] https://arxiv.org/pdf/2504.20595
+>
+> [2] https://github.com/Debrup-61/RaDeR
+>
+> [3] https://huggingface.co/ielabgroup/Rank-R1-32B-v0.2
+>
+> [4] https://github.com/jataware/XRR2
+>
+> [5] http://arxiv.org/pdf/2508.07050
+>
+> [6] https://arxiv.org/pdf/2508.07995
+
 ### BGE-Reasoner-0821 (nDCG@10 = 45.2, released on Aug 21, 2025)
 
 Pipeline:
@@ -81,6 +101,27 @@ Pipeline:
 Results:
 
 ![bge-reasoner-0821-results](./imgs/bge-reasoner-0821-results.png)
+
+Note:
+- "**Avg - ALL**" refers to the average performance across **all 12 datasets** in the BRIGHT benchmark.
+- "**Avg - SE**" refers to the average performance across the **7 datasets in the StackExchange subset** of the BRIGHT benchmark.
+- "**Avg - CD**" refers to the average performance across the **2 datasets in the Coding subset** of the BRIGHT benchmark.
+- "**Avg - MT**" refers to the average performance across the **3 datasets in the Theorem-based subset** of the BRIGHT benchmark.
+
+> Sources of results:
+>
+> [1] https://arxiv.org/pdf/2504.20595
+>
+> [2] https://github.com/Debrup-61/RaDeR
+>
+> [3] https://huggingface.co/ielabgroup/Rank-R1-32B-v0.2
+>
+> [4] https://github.com/jataware/XRR2
+>
+> [5] http://arxiv.org/pdf/2508.07050
+>
+> [6] https://arxiv.org/pdf/2508.07995
+
 
 ## Citation
 
