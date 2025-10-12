@@ -66,8 +66,8 @@ Eval
 ```bash
 rm ./FlagEmbedding/FlagEmbedding/evaluation/bright/search.py
 rm ./FlagEmbedding/FlagEmbedding/evaluation/bright/data_loader.py
-cp ./FlagEmbedding/FlagEmbedding/evaluation/bright/search.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
-cp ./FlagEmbedding/FlagEmbedding/evaluation/bright/data_loader.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
+cp ./evaluation/FlagEmbedding-offical/search.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
+cp ./evaluation/FlagEmbedding-offical/data_loader.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
 ```
 
 then using scripts from [embedder-scripts](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed/evaluation_bright/scripts)
