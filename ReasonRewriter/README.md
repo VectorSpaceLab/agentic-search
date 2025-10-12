@@ -1,4 +1,4 @@
-# BGE-Rewriter
+# Reason-Rewriter
 
 ## Introduction
 
@@ -64,9 +64,9 @@ cd ..
 Eval
 
 ```bash
-rm ./FlagEmbedding/FlagEmbedding/evaluation/bright/searcher.py
+rm ./FlagEmbedding/FlagEmbedding/evaluation/bright/search.py
 rm ./FlagEmbedding/FlagEmbedding/evaluation/bright/data_loader.py
-cp ./FlagEmbedding/FlagEmbedding/evaluation/bright/searcher.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
+cp ./FlagEmbedding/FlagEmbedding/evaluation/bright/search.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
 cp ./FlagEmbedding/FlagEmbedding/evaluation/bright/data_loader.py ./FlagEmbedding/FlagEmbedding/evaluation/bright
 ```
 
