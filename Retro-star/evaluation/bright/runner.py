@@ -116,13 +116,13 @@ class BrightEvalRunner(AbsEvalRunner):
                 )
             logger.info(f"{self.eval_args.eval_name} evaluation on {dataset_names} completed.")
 
-        logger.info("Start computing metrics.")
-        self.evaluate_metrics(
-            search_results_save_dir=self.eval_args.output_dir,
-            output_method=self.eval_args.eval_output_method,
-            output_path=self.eval_args.eval_output_path,
-            metrics=self.eval_args.eval_metrics
-        )
+        # logger.info("Start computing metrics.")
+        # self.evaluate_metrics(
+        #     search_results_save_dir=self.eval_args.output_dir,
+        #     output_method=self.eval_args.eval_output_method,
+        #     output_path=self.eval_args.eval_output_path,
+        #     metrics=self.eval_args.eval_metrics
+        # )
 
     def load_retriever_and_reranker(self):
         embedder, reranker = self.get_models(self.model_args)

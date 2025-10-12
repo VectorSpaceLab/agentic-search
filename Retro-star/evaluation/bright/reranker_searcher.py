@@ -55,6 +55,7 @@ class ReasoningEvalReranker(EvalReranker):
         **kwargs,
     ) -> Tuple[Dict[str, Dict[str, float]], float]:
         running_time = 0.0
+        completion_tokens = 0
 
         excluded_ids = {}
         qrels = kwargs.get("reranker_qrels", None)

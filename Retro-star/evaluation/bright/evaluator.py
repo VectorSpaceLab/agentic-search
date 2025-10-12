@@ -103,11 +103,6 @@ class BrightEvaluator(AbsEvaluator):
             save_name = "{split}.json"
 
         # Retrieval Stage
-        no_reranker_search_results_save_dir = os.path.join(
-            search_results_save_dir, str(retriever), "NoReranker"
-        )
-        os.makedirs(no_reranker_search_results_save_dir, exist_ok=True)
-
         no_reranker_search_results_dict = {}
         for split in splits:
             if isinstance(retriever, CustomEvalRetriever):
@@ -136,15 +131,12 @@ class BrightEvaluator(AbsEvaluator):
             )
             no_reranker_search_results_dict[split] = replaced_search_results
 
-        eval_results_save_path = os.path.join(no_reranker_search_results_save_dir, 'EVAL', 'eval_results.json')
-        if not os.path.exists(eval_results_save_path) or self.overwrite:
-            retriever_eval_results = self.evaluate_results(no_reranker_search_results_save_dir, k_values=k_values)
-            self.output_eval_results_to_json(retriever_eval_results, eval_results_save_path)
-
-        reranker_search_results_save_dir = os.path.join(
-            search_results_save_dir, str(retriever), str(reranker)
-        )
-        os.makedirs(reranker_search_results_save_dir, exist_ok=True)
+        reranker_search_results_save_dir_dict = {}
+        for split in splits:
+            reranker_search_results_save_dir_dict[split] = os.path.join(
+                search_results_save_dir, str(retriever), str(reranker)
+            )
+            os.makedirs(reranker_search_results_save_dir_dict[split], exist_ok=True)
 
         ###########################################
         if isinstance(reranker, ReasoningEvalReranker):
@@ -152,10 +144,10 @@ class BrightEvaluator(AbsEvaluator):
             if last_pass_running_name:
                 # change no reranker search results to last pass search results.
                 no_reranker_search_results_dict = {}
-                first_pass_reranker_search_results_save_dir = os.path.join(
-                    search_results_save_dir, str(retriever), last_pass_running_name
-                )
                 for split in splits:
+                    first_pass_reranker_search_results_save_dir = os.path.join(
+                        search_results_save_dir, str(retriever), last_pass_running_name
+                    )
                     split_no_reranker_search_results_save_path = os.path.join(
                         first_pass_reranker_search_results_save_dir, save_name.format(split=split)
                     )
@@ -181,7 +173,7 @@ class BrightEvaluator(AbsEvaluator):
         flag = False
         for split in splits:
             rerank_search_results_save_path = os.path.join(
-                reranker_search_results_save_dir, save_name.format(split=split)
+                reranker_search_results_save_dir_dict[split], save_name.format(split=split)
             )
 
             if os.path.exists(rerank_search_results_save_path) and not self.overwrite:
@@ -209,7 +201,7 @@ class BrightEvaluator(AbsEvaluator):
                 completion_tokens=completion_tokens
             )
         
-        eval_results_save_path = os.path.join(reranker_search_results_save_dir, 'EVAL', 'eval_results.json')
+        eval_results_save_path = os.path.join(reranker_search_results_save_dir_dict[split], 'EVAL', 'eval_results.json')
         if not os.path.exists(eval_results_save_path) or self.overwrite or flag:
-            reranker_eval_results = self.evaluate_results(reranker_search_results_save_dir, k_values=k_values)
+            reranker_eval_results = self.evaluate_results(reranker_search_results_save_dir_dict[split], k_values=k_values)
             self.output_eval_results_to_json(reranker_eval_results, eval_results_save_path)
