@@ -36,7 +36,7 @@ if __name__=='__main__':
     if args.input_file is not None:
         with open(args.input_file) as f:
             examples = json.load(f)
-    examples = load_dataset('cfli/reasoner-rewritten-query-0821', 'args.task', cache_dir=args.cache_dir, split='train')
+    examples = load_dataset('cfli/reasoner-rewritten-query-0821', args.task, cache_dir=args.cache_dir, split='train')
     if args.long_context:
         doc_pairs = load_dataset('xlangai/bright', 'long_documents',cache_dir=args.cache_dir)[args.task]
     else:

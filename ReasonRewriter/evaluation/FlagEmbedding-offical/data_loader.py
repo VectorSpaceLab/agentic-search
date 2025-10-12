@@ -179,10 +179,11 @@ class BrightShortEvalDataLoader(AbsEvalDataLoader):
             datasets.DatasetDict: Loaded datasets instance of queries.
         """
         examples = datasets.load_dataset(
-            "xlangai/bright", split,
+            "cfli/reasoner-rewritten-query-0821", dataset_name,
+            split='train',
             cache_dir=self.cache_dir,
             download_mode=self.hf_download_mode
-        )[dataset_name]
+        )
 
         if save_dir is not None:
             os.makedirs(save_dir, exist_ok=True)
