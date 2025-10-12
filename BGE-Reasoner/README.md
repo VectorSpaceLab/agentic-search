@@ -53,13 +53,14 @@ We introduce **BGE-Reasoner**, an end-to-end reasoning-intensive information ret
 
 #### Evaluation Scripts
 
-| Resource Type      | Name                                                         | Link  | Release Date | Comments                                |
-| ------------------ | ------------------------------------------------------------ | ----- | ------------ | --------------------------------------- |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA) | Oct 11, 2025 | using original query                    |
-| Evaluation Scripts | evaluation script of BM25 on BRIGHT                          | (TBA) | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821 |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA) | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821 |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Reranker-0928-\* based on the search results from BM25 / BGE-Reasoner-Embed-0923 using BGE-Reasoner-Rewritten-Query-0821 | (TBA) | Oct 11, 2025 | using original query                    |
-| Evaluation Scripts | scripts for fusing all search results to obtain the final reranking results of BGE-Reasoner-0928 | (TBA) | Oct 11, 2025 |                                         |
+| Resource Type      | Name                                                         | Link                                                         | Release Date | Comments                                |
+| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | --------------------------------------- |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | [script](https://github.com/VectorSpaceLab/agentic-search/blob/main/ReasonEmbed/evaluation_bright/scripts/ours/eval_reason_embed_basic_qwen3_8b.sh) | Oct 11, 2025 | using original query                    |
+| Evaluation Scripts | evaluation script of BM25 on BRIGHT                          | (TBA)                                                        | -            | using BGE-Reasoner-Rewritten-Query-0821 |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA)                                                        | -            | using BGE-Reasoner-Rewritten-Query-0821 |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Reranker-0928-\* based on the search results from BM25 using BGE-Reasoner-Rewritten-Query-0821 | [script](https://github.com/VectorSpaceLab/agentic-search/blob/main/Retro-star/evaluation/bright/scripts/reasoner-rewritten-query-0821/bm25/100%401-30%4016-retro-star-qwen3-8b-0928.sh) | Oct 11, 2025 | using original query                    |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Reranker-0928-\* based on the search results from BGE-Reasoner-Embed-0923 using BGE-Reasoner-Rewritten-Query-0821 | [script](https://github.com/VectorSpaceLab/agentic-search/blob/main/Retro-star/evaluation/bright/scripts/reasoner-rewritten-query-0821/reason-embed-basic-qwen3-8b-0928/100%401-30%4016-retro-star-qwen3-8b-0928.sh) | Oct 11, 2025 | using original query                    |
+| Evaluation Scripts | scripts for fusing all search results to obtain the final reranking results of BGE-Reasoner-0928 | [script](./fusion_results/scripts)                           | Oct 11, 2025 |                                         |
 
 ### Training
 
