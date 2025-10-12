@@ -24,6 +24,7 @@ We introduce **BGE-Reasoner**, an end-to-end reasoning-intensive information ret
 
 | Resource Type | Name                    | Link                                                         | Release Date | Comments                                                     |
 | ------------- | ----------------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| Model         | BGE-Reasoner-Embed-0928 | 🤗[reason-embed-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-qwen3-8b-0928) | Oct 11, 2025 | nDCG@10 = 38.1 on BRIGHT using original queries; fine-tuned on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) with BGE-Reasoner-Data-0928 using the novel RI-InfoNCE loss proposed in the [paper](https://arxiv.org/abs/2510.08252) |
 | Model         | BGE-Reasoner-Embed-0923 | 🤗[reason-embed-basic-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-basic-qwen3-8b-0928) (same as [bge-reasoner-embed-qwen3-8b-0923](https://huggingface.co/BAAI/bge-reasoner-embed-qwen3-8b-0923)) | Sep 23, 2025 | nDCG@10 = 37.1 on BRIGHT using original queries; fine-tuned on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) with BGE-Reasoner-Data-0928 using the basic InfoNCE loss |
 | Model         | BGE-Reasoner-Embed-0821 | -                                                            | -            | nDCG@10 = 32.5 on BRIGHT using original queries; will not be released due to its suboptimal performance compared to BGE-Reasoner-Embed-0923 |
 
