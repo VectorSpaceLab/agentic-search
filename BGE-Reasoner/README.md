@@ -14,35 +14,63 @@ We introduce **BGE-Reasoner**, an end-to-end reasoning-intensive information ret
 
 ### Models
 
+#### Rewriter
+
+| Resource Type | Name                       | Link                                                         | Release Date | Comments                                                     |
+| ------------- | -------------------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| Model         | BGE-Reasoner-Rewriter-0821 | 🤗[reasoner-rewriter-qwen2.5-7b-0821](https://huggingface.co/cfli/reasoner-rewriter-qwen2.5-7b-0821) | Oct 11, 2025 | fine-tuned on [Qwen/Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) with BGE-Reasoner-Data-0904 |
+
+#### Embedder
+
+| Resource Type | Name                    | Link                                                         | Release Date | Comments                                                     |
+| ------------- | ----------------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| Model         | BGE-Reasoner-Embed-0923 | 🤗[reason-embed-basic-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-basic-qwen3-8b-0928) (same as [bge-reasoner-embed-qwen3-8b-0923](https://huggingface.co/BAAI/bge-reasoner-embed-qwen3-8b-0923)) | Sep 23, 2025 | nDCG@10 = 37.1 on BRIGHT using original queries; fine-tuned on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) with BGE-Reasoner-Data-0928 using the basic InfoNCE loss |
+| Model         | BGE-Reasoner-Embed-0821 | -                                                            | -            | nDCG@10 = 32.5 on BRIGHT using original queries; will not be released due to its suboptimal performance compared to BGE-Reasoner-Embed-0923 |
+
+#### Reranker
+
 | Resource Type | Name                           | Link                                                         | Release Date | Comments                                                     |
 | ------------- | ------------------------------ | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Model         | BGE-Reasoner-Rewriter-0821     | 🤗[reasoner-rewriter-qwen2.5-7b-0821](https://huggingface.co/cfli/reasoner-rewriter-qwen2.5-7b-0821) | Oct 11, 2025 | fine-tuned on [Qwen/Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct) with BGE-Reasoner-Data-0904 |
-| Model         | BGE-Reasoner-Embed-0923        | 🤗[reason-embed-basic-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-basic-qwen3-8b-0928) (same as [bge-reasoner-embed-qwen3-8b-0923](https://huggingface.co/BAAI/bge-reasoner-embed-qwen3-8b-0923)) | Sep 23, 2025 | nDCG@10 = 37.1 on BRIGHT using original queries; fine-tuned on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) with BGE-Reasoner-Data-0928 using the basic InfoNCE loss |
 | Model         | BGE-Reasoner-Reranker-0928-8B  | 🤗[retro-star-qwen3-8b-0928](https://huggingface.co/ljw13/retro-star-qwen3-8b-0928) | Oct 11, 2025 | fine-tuned on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) with BGE-Reasoner-Data-0928 |
 | Model         | BGE-Reasoner-Reranker-0928-14B | 🤗[retro-star-qwen3-14b-0928](https://huggingface.co/ljw13/retro-star-qwen3-14b-0928) | Oct 11, 2025 | fine-tuned on [Qwen/Qwen3-14B](https://huggingface.co/Qwen/Qwen3-14B) with BGE-Reasoner-Data-0928 |
 | Model         | BGE-Reasoner-Reranker-0928-32B | 🤗[retro-star-qwen3-32b-0928](https://huggingface.co/ljw13/retro-star-qwen3-32b-0928) | Oct 11, 2025 | fine-tuned on [Qwen/Qwen3-32B](https://huggingface.co/Qwen/Qwen3-32B) with BGE-Reasoner-Data-0928 |
-| Model         | BGE-Reasoner-Embed-0821        | -                                                            | -            | nDCG@10 = 32.5 on BRIGHT using original queries; will not be released due to its suboptimal performance compared to BGE-Reasoner-Embed-0923 |
 | Model         | BGE-Reasoner-Reranker-0821-\*   | -                                                            | -            | used in BGE-Reasoner-0821; will not be released due to their suboptimal performance compared to BGE-Reasoner-Reranker-0923-\* |
 
 ### Evaluation
 
-| Resource Type      | Name                                                         | Link                                                         | Release Date | Comments                                                     |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Rewrriten Query    | BGE-Reasoner-Rewritten-Query-0821                            | 🤗[reasoner-rewritten-query-0821](https://huggingface.co/datasets/cfli/reasoner-rewritten-query-0821) | Oct 11, 2025 |                                                              |
-| Search Results     | search results of BGE-Reasoner-Embed-0821 on BRIGHT          | [🤗](https://huggingface.co/datasets/hanhainebula/bright-search-results_bge-reasoner-embed-0821/tree/main) | Sep 4, 2025  | nDCG@10 = 32.5 using original query; submission to BRIGHT leaderboard on Aug 21, 2025 |
-| Search Results     | search results of BGE-Reasoner on BRIGHT                     | [🤗](https://huggingface.co/datasets/hanhainebula/bright-search-results) | Oct 11, 2025 |                           |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | [🤗](https://huggingface.co/hanhainebula/reason-embed-basic-qwen3-8b-0928/blob/main/evaluation_scripts/eval_bright_short.sh) | Oct 11, 2025 | using original query                                         |
-| Evaluation Scripts | evaluation script of BM25 on BRIGHT                          | (TBA)                                                        | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821                      |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA)                                                        | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821                      |
-| Evaluation Scripts | evaluation script of BGE-Reasoner-Reranker-0928-\* based on the search results from BM25 / BGE-Reasoner-Embed-0923 using BGE-Reasoner-Rewritten-Query-0821 | (TBA)                                                        | Oct 11, 2025 | using original query                                         |
-| Evaluation Scripts | scripts for fusing all search results to obtain the final reranking results of BGE-Reasoner-0928 | (TBA)                                                        | Oct 11, 2025 |                                                              |
+#### Rewritten Query
+
+| Resource Type   | Name                              | Link                                                         | Release Date | Comments |
+| --------------- | --------------------------------- | ------------------------------------------------------------ | ------------ | -------- |
+| Rewrriten Query | BGE-Reasoner-Rewritten-Query-0821 | 🤗[reasoner-rewritten-query-0821](https://huggingface.co/datasets/cfli/reasoner-rewritten-query-0821) | Oct 11, 2025 |          |
+
+#### Search Results
+
+| Resource Type  | Name                                                | Link                                                         | Release Date | Comments                                                     |
+| -------------- | --------------------------------------------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| Search Results | search results of BGE-Reasoner-Embed-0821 on BRIGHT | [🤗](https://huggingface.co/datasets/hanhainebula/bright-search-results_bge-reasoner-embed-0821/tree/main) | Sep 4, 2025  | nDCG@10 = 32.5 using original query; submission to BRIGHT leaderboard on Aug 21, 2025 |
+| Search Results | search results of BGE-Reasoner on BRIGHT            | [🤗](https://huggingface.co/datasets/hanhainebula/bright-search-results) | Oct 11, 2025 |                                                              |
+
+#### Evaluation Scripts
+
+| Resource Type      | Name                                                         | Link  | Release Date | Comments                                |
+| ------------------ | ------------------------------------------------------------ | ----- | ------------ | --------------------------------------- |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA) | Oct 11, 2025 | using original query                    |
+| Evaluation Scripts | evaluation script of BM25 on BRIGHT                          | (TBA) | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821 |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Embed-0923 on BRIGHT       | (TBA) | Oct 11, 2025 | using BGE-Reasoner-Rewritten-Query-0821 |
+| Evaluation Scripts | evaluation script of BGE-Reasoner-Reranker-0928-\* based on the search results from BM25 / BGE-Reasoner-Embed-0923 using BGE-Reasoner-Rewritten-Query-0821 | (TBA) | Oct 11, 2025 | using original query                    |
+| Evaluation Scripts | scripts for fusing all search results to obtain the final reranking results of BGE-Reasoner-0928 | (TBA) | Oct 11, 2025 |                                         |
 
 ### Training
+
+#### Data
 
 | Resource Type | Name                   | Link                                                         | Release Date | Comments                                                     |
 | ------------- | ---------------------- | ------------------------------------------------------------ | ------------ | ------------------------------------------------------------ |
 | Training Data | BGE-Reasoner-Data-0904 | 🤗[bge-reasoner-data-0904](https://huggingface.co/datasets/hanhainebula/bge-reasoner-data/tree/main/bge-reasoner-data-0904) | Sep 4, 2025  | Used for training BGE-Reasoner-Rewriter-0821                 |
 | Training Data | BGE-Reasoner-Data-0928 | 🤗[reason-embed-data-0928](https://huggingface.co/datasets/hanhainebula/reason-embed-data/tree/main/reason-embed-data-0928) | Oct 11, 2025 | Used for training BGE-Reasoner-Embed-0923, BGE-Reasoner-Reranker-0928-\* |
+
+#### Code
 
 For the training details of BGE-Reasoner-Embed, please refer to this page: [ReasonEmbed](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed).
 
