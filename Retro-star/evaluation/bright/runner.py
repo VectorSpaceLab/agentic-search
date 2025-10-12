@@ -78,6 +78,7 @@ class BrightEvalRunner(AbsEvalRunner):
         if len(dataset_names) == 0:
             logger.info(f"Running {self.eval_args.eval_name} evaluation on the default dataset.")
             self.evaluator(
+                retrieval_split=self.eval_args.retrieval_split,
                 splits=self.eval_args.splits,
                 search_results_save_dir=self.eval_args.output_dir,
                 retriever=self.retriever,
@@ -102,6 +103,7 @@ class BrightEvalRunner(AbsEvalRunner):
                     raise NotImplementedError(f"Reranker model class {self.model_args.reranker_model_class} not implemented for special instructions.")
                 logger.info(f"Running {self.eval_args.eval_name} evaluation on: {dataset_name}")
                 self.evaluator(
+                    retrieval_split=self.eval_args.retrieval_split,
                     splits=self.eval_args.splits,
                     search_results_save_dir=self.eval_args.output_dir,
                     retriever=self.retriever,

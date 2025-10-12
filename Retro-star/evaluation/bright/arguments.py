@@ -13,6 +13,11 @@ class BrightEvalArgs(AbsEvalArgs):
         default="short", metadata={"help": "The task type to evaluate on. Available options: ['short']. Default: short", "choices": ["short"]}
     )
 
+    retrieval_split: str = field(
+        default="examples",
+        metadata={"help": "The data split to use for retrieval. Default: examples"}
+    )
+
     multiple_pass_reranking_paths: List[str] = field(
         default_factory=lambda: ["100@1"],
         metadata={"help": "The paths for multiple pass reranking. Default: ['100@1']"}

@@ -79,6 +79,7 @@ class BrightEvaluator(AbsEvaluator):
 
     def __call__(
         self,
+        retrieval_split: str,
         splits: Union[str, List[str]],
         search_results_save_dir: str,
         retriever: EvalRetriever,
@@ -111,9 +112,18 @@ class BrightEvaluator(AbsEvaluator):
         for split in splits:
             if isinstance(retriever, CustomEvalRetriever):
                 split_no_reranker_search_results_save_path = os.path.join(
-                    retriever.embedder.model_name_or_path, "NoReranker", save_name.format(split=split)
+                    retriever.embedder.model_name_or_path, "NoReranker", save_name.format(split=retrieval_split)
                 )
                 data_info, search_results = self.load_search_results(split_no_reranker_search_results_save_path)
+
+                # replace retrieval-stage split prefix with the reranking-stage split prefix
+                replaced_search_results = {}
+                for qid, doc_scores in search_results.items():
+                    if qid.startswith(f"{retrieval_split}-"):
+                        new_qid = f"{split}-" + qid[len(f"{retrieval_split}-"):]
+                    else:
+                        raise ValueError(f"QID {qid} does not start with the expected prefix {retrieval_split}-")
+                    replaced_search_results[new_qid] = doc_scores
             else:
                 raise NotImplementedError("Only CustomEvalRetriever is supported in the current version.")
 
@@ -121,10 +131,10 @@ class BrightEvaluator(AbsEvaluator):
                 data_info=data_info,
                 model_name=str(retriever),
                 reranker_name="NoReranker",
-                split=split,
+                split=retrieval_split,
                 dataset_name=dataset_name,
             )
-            no_reranker_search_results_dict[split] = search_results
+            no_reranker_search_results_dict[split] = replaced_search_results
 
         eval_results_save_path = os.path.join(no_reranker_search_results_save_dir, 'EVAL', 'eval_results.json')
         if not os.path.exists(eval_results_save_path) or self.overwrite:
