@@ -207,4 +207,6 @@ marimo/_lsp/
 __marimo__/
 
 # Retro*
-bright-evaluation/
+.cache/
+.reranker_scores_cache/
+data/
