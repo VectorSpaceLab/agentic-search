@@ -22,6 +22,8 @@ For more details, please refer to our [paper](https://arxiv.org/pdf/2509.24869).
 
 | Name                  | Release Date |
 | --------------------- | ------------ |
+| 🤗[retro-star-qwen2.5-7b-instruct-0923](https://huggingface.co/ljw13/retro-star-qwen2.5-7b-instruct-0923)    | Oct 12, 2025    |
+| 🤗[retro-star-qwen2.5-32b-instruct-0923](https://huggingface.co/ljw13/retro-star-qwen2.5-32b-instruct-0923)   | Oct 12, 2025    |
 | 🤗[retro-star-qwen3-8b-0928](https://huggingface.co/ljw13/retro-star-qwen3-8b-0928)    | Oct 11, 2025    |
 | 🤗[retro-star-qwen3-14b-0928](https://huggingface.co/ljw13/retro-star-qwen3-14b-0928)   | Oct 11, 2025    |
 | 🤗[retro-star-qwen3-32b-0928](https://huggingface.co/ljw13/retro-star-qwen3-32b-0928)   | Oct 11, 2025    |
