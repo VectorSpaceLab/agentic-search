@@ -16,6 +16,14 @@ To optimize Retro\*'s reasoning capabilities, we introduce a novel **reinforceme
 
 For more details, please refer to our [paper](https://arxiv.org/pdf/2509.24869).
 
+## Performance
+
+### BRIGHT
+
+Evaluation results of Retro* (retro-star-qwen2.5-7b-instruct-0923, retro-star-qwen2.5-32b-instruct-0923) on the [BRIGHT](https://brightbenchmark.github.io/) benchmark:
+
+![bright-performance](./imgs/retro-star-bright-performance.png)
+
 ## Open-Source Resources
 
 ### Model Checkpoints
