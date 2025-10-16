@@ -23,8 +23,16 @@ For more details, please refer to our [paper](https://arxiv.org/pdf/2509.24869).
 Evaluation results of Retro* (retro-star-qwen2.5-7b-instruct-0923, retro-star-qwen2.5-32b-instruct-0923) on the [BRIGHT](https://brightbenchmark.github.io/) benchmark:
 
 ![bright-performance](./imgs/retro-star-bright-performance.png)
+![bright-score](./imgs/retro-star-bright-score.png)
 
 ## Open-Source Resources
+
+### Training Datasets
+
+| Name                  | Release Date | Comments |
+| --------------------- | ------------ | ------------ |
+| 🤗[BRIGHT](https://huggingface.co/datasets/ljw13/retro-star-training-datasets)   | Oct 16, 2025    | From 🤗[hanhainebula/bge-reasoner-data](https://huggingface.co/datasets/hanhainebula/bge-reasoner-data) |
+
 
 ### Model Checkpoints
 
