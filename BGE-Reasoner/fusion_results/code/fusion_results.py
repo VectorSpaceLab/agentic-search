@@ -35,11 +35,11 @@ def save_data_to_json(data, file_path: str):
     print(f"Saved data to {file_path}")
 
 
-def load_bright_data_loader():
+def load_bright_data_loader(dataset_dir: str, cache_dir: str = None):
     data_loader = BrightShortEvalDataLoader(
         eval_name="bright_short",
-        dataset_dir="/share/project/jianlv/o1-Embedder-Extension/evaluation_embedder/short/data",
-        cache_dir="/share/project/jianlv/datasets/.cache",
+        dataset_dir=dataset_dir,
+        cache_dir=cache_dir,
     )
     return data_loader
 
@@ -144,7 +144,7 @@ def init_merged_model_name(merged_model_name, weights, norm, top_k, use_rrf, rrf
 
 
 def main(args):
-    data_loader = load_bright_data_loader()
+    data_loader = load_bright_data_loader(dataset_dir=args.dataset_dir, cache_dir=args.cache_dir)
     evaluator = load_bright_evaluator(data_loader)
     
     norm = args.norm
@@ -214,6 +214,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Merge search results and evaluate.")
     parser.add_argument("--results_dirs", type=str, nargs="+", required=True, help="List of directories containing search results.")
     parser.add_argument("--weights", type=float, nargs="+", required=True, help="Weights for merging results.")
+    parser.add_argument("--dataset_dir", type=str, default="./bright_dataset", help="Directory of the BRIGHT dataset.")
+    parser.add_argument("--cache_dir", type=str, default=None, help="Cache directory for data loader.")
     parser.add_argument("--norm_weights", action='store_true', help="Whether to normalize weights.")
     parser.add_argument("--merged_model_name", type=str, required=True, help="Name of the merged model.")
     parser.add_argument("--save_dir", type=str, required=True, help="Directory to save merged results and evaluation.")
