@@ -52,7 +52,7 @@ Evaluation results of ReasonEmbed on the [R2MED](https://r2med.github.io/) bench
 
 | Resource Type | Name                           | Link                                             | Release Date | Comments                                                     |
 | ------------- | ------------------------------ | ------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Model         | ReasonEmbed-Annotator-Qwen3-8B | 🤗[reason-embed-annotator-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-annotator-qwen3-8b-0928) | -            | Distilled relevance annotator based on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) used in our paper |
+| Model         | ReasonEmbed-Annotator-Qwen3-8B | 🤗[reason-embed-annotator-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-annotator-qwen3-8b-0928) | Jun 9, 2026 | Distilled relevance annotator based on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) used in our paper |
 
 ### Evaluation
 
