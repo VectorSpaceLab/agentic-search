@@ -16,7 +16,7 @@ We propose **ReasonEmbed**, a new text embedding model for reasoning-intensive d
 2. We introduce a self-adaptive training method tailored for our synthetic data, termed **Redapter**.
 3. We implement ReasonEmbed based on multiple LLM backbones of varying model sizes, which achieve **state-of-the-art (SOTA) performance** on reasoning-intensive document retrieval tasks. Notably, our model built on Qwen3-4B reaches an nDCG@10 score of 37.1 on the [**BRIGHT**](https://brightbenchmark.github.io/) benchmark, which already surpasses all existing text embedding models. While the Qwen3-8B based varient improves the performance to **38.1**. Moreover, on the [**R2MED**](https://r2med.github.io/) benchmark, ReasonEmbed-Qwen3-8B attains an nDCG@10 score of **43.18**, surpassing all of the existing models by a large margin and leading to new SOTA performance.
 
-This paper has been accepted to the **ACL 2026 Main Conference (Oral Presentation)**🎉. For more details, please refer to our [paper](https://arxiv.org/pdf/2510.08252).
+This paper has been accepted to the **ACL 2026 Main Conference** (**Oral Presentation**)🎉. For more details, please refer to our [paper](https://arxiv.org/pdf/2510.08252).
 
 ## Performance
 
