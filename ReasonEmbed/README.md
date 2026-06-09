@@ -1,5 +1,5 @@
 <div align="center">
-<h1> ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval </h1>
+<h1> ReasonEmbed: Enhanced Text Embeddings for Reasoning-Intensive Document Retrieval [ACL 2026] </h1>
 </div>
 
 <p align="center">
@@ -16,7 +16,7 @@ We propose **ReasonEmbed**, a new text embedding model for reasoning-intensive d
 2. We introduce a self-adaptive training method tailored for our synthetic data, termed **Redapter**.
 3. We implement ReasonEmbed based on multiple LLM backbones of varying model sizes, which achieve **state-of-the-art (SOTA) performance** on reasoning-intensive document retrieval tasks. Notably, our model built on Qwen3-4B reaches an nDCG@10 score of 37.1 on the [**BRIGHT**](https://brightbenchmark.github.io/) benchmark, which already surpasses all existing text embedding models. While the Qwen3-8B based varient improves the performance to **38.1**. Moreover, on the [**R2MED**](https://r2med.github.io/) benchmark, ReasonEmbed-Qwen3-8B attains an nDCG@10 score of **43.18**, surpassing all of the existing models by a large margin and leading to new SOTA performance.
 
-For more details, please refer to our [paper](https://arxiv.org/pdf/2510.08252).
+This paper has been accepted to the **ACL 2026 Main Conference (Oral Presentation)**🎉. For more details, please refer to our [paper](https://arxiv.org/pdf/2510.08252).
 
 ## Performance
 
@@ -52,7 +52,7 @@ Evaluation results of ReasonEmbed on the [R2MED](https://r2med.github.io/) bench
 
 | Resource Type | Name                           | Link                                             | Release Date | Comments                                                     |
 | ------------- | ------------------------------ | ------------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Model         | ReasonEmbed-Annotator-Qwen3-8B | 🤗 (TBA) [reason-embed-annotator-qwen3-8b-0928]() | -            | Distilled relevance annotator based on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) used in our paper |
+| Model         | ReasonEmbed-Annotator-Qwen3-8B | 🤗[reason-embed-annotator-qwen3-8b-0928](https://huggingface.co/hanhainebula/reason-embed-annotator-qwen3-8b-0928) | -            | Distilled relevance annotator based on [Qwen/Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) used in our paper |
 
 ### Evaluation
 
@@ -81,13 +81,13 @@ Evaluation results of ReasonEmbed on the [R2MED](https://r2med.github.io/) bench
 
 | Resource Type                   | Name    | Link  | Release Date | Comments       |
 | ------------------------------- | ------- | ----- | ------------ | -------------- |
-| Data Synthesis Code and Scripts | ReMixer | (TBA) | -            | to be released |
+| Data Synthesis Code and Scripts | ReMixer | [code & scripts](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed/data_synthesis) | Jun 9, 2026 | data synthesis code and scripts for ReMixer |
 
 ### Training Code
 
 | Resource Type             | Name     | Link  | Release Date | Comments       |
 | ------------------------- | -------- | ----- | ------------ | -------------- |
-| Training Code and Scripts | Redapter | (TBA) | -            | to be released |
+| Training Code and Scripts | Redapter | [code & scripts](https://github.com/VectorSpaceLab/agentic-search/tree/main/ReasonEmbed/training) | Jun 9, 2026 | training code and scripts for Redapter |
 
 ## Citation
 

@@ -1,0 +1,11 @@
+# Runtime baseline: Python 3.10.16, CUDA 12.4.
+torch==2.6.0
+transformers==4.51.1
+FlagEmbedding @ git+https://github.com/FlagOpen/FlagEmbedding.git@dbc600560b2dadcc1514989092f7b849673bb67d
+deepspeed==0.16.7
+accelerate==1.6.0
+peft==0.15.2
+sentencepiece==0.2.0
+tokenizers==0.21.1
+numpy==1.26.4
+flash-attn==2.7.4.post1
